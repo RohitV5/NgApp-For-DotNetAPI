@@ -6,7 +6,7 @@ import { MemberListComponent } from './members/member-list/member-list.component
 import { AuthGuard } from './_gaurds/auth.guard';
 
 export const appRoutes: Routes = [
-    { path: '', component: HomeComponent },
+    { path: 'home', component: HomeComponent },
     {
         path: '', runGuardsAndResolvers: 'always', canActivate: [AuthGuard],
         children: [
