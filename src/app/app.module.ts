@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
+import { NgxGalleryModule } from 'ngx-gallery-9';
 
 import { NavComponent } from './nav/nav.component';
 import { AuthService } from './_services/auth.service';
@@ -52,6 +53,7 @@ export function tokenGetter() {
       HttpClientModule,
       FormsModule,
       BrowserAnimationsModule,
+      NgxGalleryModule,
       BsDropdownModule.forRoot(), RouterModule.forRoot(appRoutes),
       TabsModule.forRoot(),
       JwtModule.forRoot({
