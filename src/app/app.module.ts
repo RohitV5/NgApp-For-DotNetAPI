@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { TabsModule } from 'ngx-bootstrap/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MemberListComponent } from './members/member-list/member-list.component';
 import { ListsComponent } from './lists/lists.component';
@@ -24,6 +25,7 @@ import { UserService } from './_services/user.service';
 import { MemberCardComponent } from './members/member-card/member-card.component';
 
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
+import { MemberDetailComponent } from './members/member-detail/member-detail.component';
 
 
 export function tokenGetter() {
@@ -39,7 +41,8 @@ export function tokenGetter() {
       MemberListComponent,
       ListsComponent,
       MessagesComponent,
-      MemberCardComponent
+      MemberCardComponent,
+      MemberDetailComponent
    ],
    imports: [
       BrowserModule,
@@ -48,6 +51,7 @@ export function tokenGetter() {
       FormsModule,
       BrowserAnimationsModule,
       BsDropdownModule.forRoot(), RouterModule.forRoot(appRoutes),
+      TabsModule.forRoot(),
       JwtModule.forRoot({
          config: {
             tokenGetter: tokenGetter,
