@@ -30,3 +30,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 # upload photos on DB, File, Cloud (Clodinary)
 
 # Made the repository privae because we added cloudinary
+
+
+
+
