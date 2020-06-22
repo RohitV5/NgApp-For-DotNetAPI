@@ -14,8 +14,11 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-import { TabsModule } from 'ngx-bootstrap/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+// RECOMMENDED
+import { TabsModule } from 'ngx-bootstrap/tabs';
+
 import { MemberListComponent } from './members/member-list/member-list.component';
 import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
@@ -24,6 +27,7 @@ import { appRoutes } from './routes';
 import { AuthGuard } from './_gaurds/auth.guard';
 import { UserService } from './_services/user.service';
 import { MemberCardComponent } from './members/member-card/member-card.component';
+
 
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
 import { MemberDetailComponent } from './members/member-detail/member-detail.component';
