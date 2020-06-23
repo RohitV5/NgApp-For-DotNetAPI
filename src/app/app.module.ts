@@ -16,6 +16,8 @@ import { RegisterComponent } from './register/register.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { TimeAgoPipe } from 'time-ago-pipe';
+
 // RECOMMENDED
 import { TabsModule } from 'ngx-bootstrap/tabs';
 
@@ -56,7 +58,7 @@ export function tokenGetter() {
       MemberCardComponent,
       MemberDetailComponent,
       MemberEditComponent,
-      PhotoEditorComponent
+      PhotoEditorComponent, TimeAgoPipe
    ],
    imports: [
       BrowserModule,
