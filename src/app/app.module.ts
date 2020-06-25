@@ -16,7 +16,7 @@ import { RegisterComponent } from './register/register.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { TimeAgoPipe } from 'time-ago-pipe';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 
 // RECOMMENDED
 import { TabsModule } from 'ngx-bootstrap/tabs';
@@ -58,7 +58,7 @@ export function tokenGetter() {
       MemberCardComponent,
       MemberDetailComponent,
       MemberEditComponent,
-      PhotoEditorComponent, TimeAgoPipe
+      PhotoEditorComponent,
    ],
    imports: [
       BrowserModule,
@@ -71,6 +71,7 @@ export function tokenGetter() {
       ReactiveFormsModule,
       BsDropdownModule.forRoot(), RouterModule.forRoot(appRoutes),
       TabsModule.forRoot(),
+      PaginationModule.forRoot(),
       JwtModule.forRoot({
          config: {
             tokenGetter: tokenGetter,
