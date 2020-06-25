@@ -23,7 +23,7 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   // the return type of this method is Observable and we are saying its of type user Array
-  getUsers(page?, itemsPerPage?): Observable<PaginatedResult<User[]>> {
+  getUsers(page?, itemsPerPage?, userParams?): Observable<PaginatedResult<User[]>> {
     const paginatedResult: PaginatedResult<User[]> = new PaginatedResult<User[]>();
 
     let params = new HttpParams();
@@ -32,6 +32,13 @@ export class UserService {
       params = params.append('pageNumber', page);
       params = params.append('pageSize', itemsPerPage);
     }
+
+    if (userParams != null) {
+      params = params.append('minAge', userParams.minAge);
+      params = params.append('maxAge', userParams.maxAge);
+      params = params.append('gender', userParams.gender);
+    }
+
     // get typically returns a type of object so we tell it its type User Array
     return this.http.get<User[]>(this.baseUrl + 'users', { observe: 'response', params })
       .pipe(
