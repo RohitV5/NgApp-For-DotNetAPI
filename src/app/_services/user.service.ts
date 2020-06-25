@@ -37,6 +37,7 @@ export class UserService {
       params = params.append('minAge', userParams.minAge);
       params = params.append('maxAge', userParams.maxAge);
       params = params.append('gender', userParams.gender);
+      params = params.append('orderBy', userParams.orderBy);
     }
 
     // get typically returns a type of object so we tell it its type User Array

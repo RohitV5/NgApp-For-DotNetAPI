@@ -15,7 +15,7 @@ import { RegisterComponent } from './register/register.component';
 
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 
 // RECOMMENDED
@@ -72,6 +72,7 @@ export function tokenGetter() {
       BsDropdownModule.forRoot(), RouterModule.forRoot(appRoutes),
       TabsModule.forRoot(),
       PaginationModule.forRoot(),
+      ButtonsModule.forRoot(),
       JwtModule.forRoot({
          config: {
             tokenGetter: tokenGetter,
