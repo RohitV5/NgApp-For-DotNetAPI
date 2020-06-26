@@ -7,23 +7,18 @@ import { PaginatedResult } from '../_models/pagination';
 import { map } from 'rxjs/operators';
 
 
-// No need to manally pass auth http header  because library is doing it
-// const httpOptions = {
-//   headers: new HttpHeaders({
-//     'Authorization': 'Bearer ' + localStorage.getItem('token')
-//   })
-// }
-
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
   baseUrl = environment.baseUrl
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+
+  }
 
   // the return type of this method is Observable and we are saying its of type user Array
-  getUsers(page?, itemsPerPage?, userParams?): Observable<PaginatedResult<User[]>> {
+  getUsers(page?, itemsPerPage?, userParams?, likesParam?): Observable<PaginatedResult<User[]>> {
     const paginatedResult: PaginatedResult<User[]> = new PaginatedResult<User[]>();
 
     let params = new HttpParams();
@@ -38,6 +33,15 @@ export class UserService {
       params = params.append('maxAge', userParams.maxAge);
       params = params.append('gender', userParams.gender);
       params = params.append('orderBy', userParams.orderBy);
+    }
+
+
+    if (likesParam === 'Likers') {
+      params = params.append('likers', 'true');
+    }
+
+    if (likesParam === 'Likees') {
+      params = params.append('likees', 'true');
     }
 
     // get typically returns a type of object so we tell it its type User Array
@@ -77,4 +81,9 @@ export class UserService {
   sendLike(id: number, recipientId: number) {
     return this.http.post(this.baseUrl + 'users/' + id + '/like/' + recipientId, {});
   }
+
+
+
+
+
 }
