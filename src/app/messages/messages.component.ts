@@ -15,7 +15,7 @@ export class MessagesComponent implements OnInit {
 
   messages: Message[];
   pagination: Pagination;
-  messageContainer: 'Unread';
+  messageContainer: string = 'Unread';
 
 
 
@@ -40,7 +40,7 @@ export class MessagesComponent implements OnInit {
   }
 
 
-  pageChange(event: any): void {
+  pageChanged(event: any): void {
     this.pagination.currentPage = event.page;
     this.loadMessages();
   }
