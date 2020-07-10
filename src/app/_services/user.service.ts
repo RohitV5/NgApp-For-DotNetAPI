@@ -119,6 +119,10 @@ export class UserService {
   }
 
 
+  sendMessage(id: number, message: Message) {
+    return this.http.post(this.baseUrl + 'users/' + id + '/messages', message);
+  }
+
 
 
 
